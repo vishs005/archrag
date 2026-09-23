@@ -14,3 +14,4 @@ src/mastra/public/
 *.duckdb.wal
 .env*
 .DS_Store
+streamlit/.venv/
