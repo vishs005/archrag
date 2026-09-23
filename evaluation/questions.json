@@ -1,0 +1,77 @@
+[
+  {
+    "id": 1,
+    "question": "What are the main components of an event-driven architecture?",
+    "expected": "answerable"
+  },
+  {
+    "id": 2,
+    "question": "What is an event producer?",
+    "expected": "answerable"
+  },
+  {
+    "id": 3,
+    "question": "What is an event consumer?",
+    "expected": "answerable"
+  },
+  {
+    "id": 4,
+    "question": "What role do event channels play in an event-driven architecture?",
+    "expected": "answerable"
+  },
+  {
+    "id": 5,
+    "question": "What are the primary topologies used in event-driven architectures?",
+    "expected": "answerable"
+  },
+  {
+    "id": 6,
+    "question": "What is the difference between broker topology and mediator topology?",
+    "expected": "answerable"
+  },
+  {
+    "id": 7,
+    "question": "What are some benefits of event-driven architecture?",
+    "expected": "answerable"
+  },
+  {
+    "id": 8,
+    "question": "What challenges should architects consider when using event-driven architecture?",
+    "expected": "answerable"
+  },
+  {
+    "id": 9,
+    "question": "When is event-driven architecture a good architectural choice?",
+    "expected": "answerable"
+  },
+  {
+    "id": 10,
+    "question": "Can event-driven architecture be combined with other architectural styles?",
+    "expected": "answerable"
+  },
+  {
+    "id": 11,
+    "question": "What is the capital of France?",
+    "expected": "unanswerable"
+  },
+  {
+    "id": 12,
+    "question": "How do I configure a PostgreSQL database?",
+    "expected": "unanswerable"
+  },
+  {
+    "id": 13,
+    "question": "What AWS EC2 instance type should I use for machine learning?",
+    "expected": "unanswerable"
+  },
+  {
+    "id": 14,
+    "question": "How does Kubernetes horizontal pod autoscaling work?",
+    "expected": "unanswerable"
+  },
+  {
+    "id": 15,
+    "question": "What authentication protocol should my mobile application use?",
+    "expected": "unanswerable"
+  }
+]

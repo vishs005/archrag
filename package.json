@@ -17,11 +17,16 @@
     "node": ">=22.13.0"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^4.0.72",
     "@mastra/core": "1.68.0",
     "@mastra/duckdb": "1.10.0",
     "@mastra/libsql": "1.23.1",
     "@mastra/memory": "1.31.0",
     "@mastra/observability": "1.17.9",
+    "@mastra/rag": "^2.6.4",
+    "@pinecone-database/pinecone": "^9.0.0",
+    "ai": "^7.0.111",
+    "dotenv": "^18.0.3",
     "zod": "^4.4.3"
   },
   "devDependencies": {
