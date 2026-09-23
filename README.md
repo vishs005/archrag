@@ -6,6 +6,10 @@ Instead of relying on an LLM's general knowledge, ArchRAG retrieves relevant sec
 
 🌐 **Live Demo:** https://archrag-vish.streamlit.app/
 
+## 🏗️ Architecture
+
+![ArchRAG Architecture](assets/archrag-architecture.png)
+
 ## 🎯 Problem
 
 Engineering teams accumulate architecture guidance across documentation, ADRs, standards, design documents, and knowledge bases.
