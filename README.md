@@ -8,7 +8,7 @@ Instead of relying on an LLM's general knowledge, ArchRAG retrieves relevant sec
 
 ## 🏗️ Architecture
 
-![ArchRAG Architecture](assets/archrag-architecture.png)
+![ArchRAG Architecture](https://github.com/vishs005/archrag/blob/main/assets/archrag-architecture.png)
 
 ## 🎯 Problem
 
