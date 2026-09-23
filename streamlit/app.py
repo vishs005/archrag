@@ -25,7 +25,7 @@ if st.button("Ask", type="primary") and question:
     with st.spinner("Searching architecture knowledge..."):
         try:
             response = requests.post(
-                "http://localhost:4111/ask",
+                "https://archrag.onrender.com/ask",
                 json={"question": question},
                 timeout=60
             )
@@ -44,27 +44,26 @@ if st.button("Ask", type="primary") and question:
                         f"[{source['title']}]({source['url']})"
                     )
 
+            if data.get("retrieval"):
+                with st.expander("🔍 Retrieval Details"):
+
+                    for i, item in enumerate(data["retrieval"], start=1):
+
+                        st.markdown(f"### Chunk {i}")
+
+                        if item.get("score") is not None:
+                            st.write(
+                                f"Similarity score: {item['score']:.3f}"
+                            )
+
+                        if item.get("source"):
+                            st.write(
+                                f"Source: {item['source']}"
+                            )
+
+                        st.write(item.get("text", ""))
+
+                        st.divider()
+
         except requests.RequestException as error:
             st.error(f"Unable to reach ArchRAG backend: {error}")
-
-if data.get("retrieval"):
-
-    with st.expander("🔍 Retrieval Details"):
-
-        for i, item in enumerate(data["retrieval"], start=1):
-
-            st.markdown(f"### Chunk {i}")
-
-            if item.get("score") is not None:
-                st.write(
-                    f"Similarity score: {item['score']:.3f}"
-                )
-
-            if item.get("source"):
-                st.write(
-                    f"Source: {item['source']}"
-                )
-
-            st.write(item.get("text", ""))
-
-            st.divider()
