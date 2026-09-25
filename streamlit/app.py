@@ -56,11 +56,17 @@ if st.button("Ask", type="primary") and question:
                                 f"Similarity score: {item['score']:.3f}"
                             )
 
-                        if item.get("source"):
-                            st.write(
-                                f"Source: {item['source']}"
-                            )
+                        if data.get("sources"):
+                            st.subheader("Sources")
 
+                            for source in data["sources"]:
+                                title = source.get("title", "Unknown source")
+                                url = source.get("url")
+
+                                if url:
+                                    st.markdown(f"[{title}]({url})")
+                                else:
+                                    st.write(f"📄 {title}")
                         st.write(item.get("text", ""))
 
                         st.divider()
