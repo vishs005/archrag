@@ -33,43 +33,60 @@ if st.button("Ask", type="primary") and question:
             response.raise_for_status()
             data = response.json()
 
+            # -------------------------
+            # Answer
+            # -------------------------
+
             st.subheader("Answer")
             st.write(data["answer"])
+
+            # -------------------------
+            # Sources
+            # -------------------------
 
             if data.get("sources"):
                 st.subheader("Sources")
 
                 for source in data["sources"]:
-                    st.markdown(
-                        f"[{source['title']}]({source['url']})"
-                    )
+                    title = source.get("title", "Unknown source")
+                    url = source.get("url")
+
+                    if url:
+                        st.markdown(f"[{title}]({url})")
+                    else:
+                        st.write(f"📄 {title}")
+
+            # -------------------------
+            # Retrieval Details
+            # -------------------------
 
             if data.get("retrieval"):
                 with st.expander("🔍 Retrieval Details"):
 
-                    for i, item in enumerate(data["retrieval"], start=1):
-
+                    for i, item in enumerate(
+                        data["retrieval"],
+                        start=1
+                    ):
                         st.markdown(f"### Chunk {i}")
 
                         if item.get("score") is not None:
                             st.write(
-                                f"Similarity score: {item['score']:.3f}"
+                                f"Similarity score: "
+                                f"{item['score']:.3f}"
                             )
 
-                        if data.get("sources"):
-                            st.subheader("Sources")
+                        if item.get("source"):
+                            st.write(
+                                f"Source: {item['source']}"
+                            )
 
-                            for source in data["sources"]:
-                                title = source.get("title", "Unknown source")
-                                url = source.get("url")
-
-                                if url:
-                                    st.markdown(f"[{title}]({url})")
-                                else:
-                                    st.write(f"📄 {title}")
-                        st.write(item.get("text", ""))
+                        st.write(
+                            item.get("text", "")
+                        )
 
                         st.divider()
 
         except requests.RequestException as error:
-            st.error(f"Unable to reach ArchRAG backend: {error}")
+            st.error(
+                f"Unable to reach ArchRAG backend: {error}"
+            )
